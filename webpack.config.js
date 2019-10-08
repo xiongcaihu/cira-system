@@ -107,7 +107,7 @@ var config = {
 };
 
 if (mode == "development") {
-    config.devtool = "inline-cheap-source-map"; // 只有开发模式需要sourcemap，生产模式不需要
+    config.devtool = "cheap-module-eval-source-map";
     var addPlugins = [
         // 开发者模式下，因为每次改动代码后需要尽快看到效果，所以这里需要将这些又大又不经常变的包做成静态文件，而上线时，这些过大的包，又不能全部打包进来，所以只能用webpack自己的tree shaing策略来打包已经依赖的模块进来
         new webpack.DllReferencePlugin({
@@ -158,11 +158,7 @@ if (mode == "development") {
 }
 if (mode == "production") {
     config.plugins.unshift(new CleanWebpackPlugin(["dll"]));
-    // config.optimization = {
-    //     splitChunks: {
-    //       chunks: 'all'
-    //     }
-    // };
+    config.devtool = "cheap-module-source-map";
 }
 
 module.exports = config;
