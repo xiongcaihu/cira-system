@@ -7,7 +7,16 @@ const mode = process.env.Node_ENV.trim();
 module.exports = {
     mode: mode,
     entry: {
-        vendor: ["react", "react-dom", "lodash", "antd", "moment"]
+        vendor: [
+            "react",
+            "react-dom",
+            "lodash",
+            "antd",
+            "moment",
+            "redux",
+            "react-redux",
+            "react-router-dom"
+        ]
     },
     output: {
         path: path.join(__dirname, "./dll"),
