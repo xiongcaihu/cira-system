@@ -6,10 +6,9 @@
   "scripts": {
     "devConfig": "node_modules/.bin/webpack-dev-server --config webpack.config.js",
     "buildConfig": "node_modules/.bin/webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development npm run dll && cross-env NODE_ENV=development npm run devConfig",
+    "dev": "cross-env NODE_ENV=development npm run devConfig",
     "build": "cross-env NODE_ENV=production npm run buildConfig",
-    "test": "node_modules/.bin/webpack --config webpack.config.js",
-    "dll": "node_modules/.bin/webpack --config webpack.vendor.config.js"
+    "test": "node_modules/.bin/webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
