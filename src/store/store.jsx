@@ -3,7 +3,7 @@ const defaultStore = {
 };
 
 var store = window.localStorage.getItem("store");
-if (store == null || store == "null") {
+if (store === null || store === "null") {
     store = defaultStore;
 } else {
     try {

@@ -1,66 +1,38 @@
 {
-  "name": "newwebpack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "devConfig": "node_modules/.bin/webpack-dev-server --config webpack.config.js",
-    "buildConfig": "node_modules/.bin/webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development npm run devConfig",
-    "build": "cross-env NODE_ENV=production npm run buildConfig",
-    "test": "node_modules/.bin/webpack --config webpack.config.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.2.1",
-    "@babel/plugin-proposal-decorators": "^7.2.0",
-    "@babel/plugin-syntax-class-properties": "^7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
-    "antd": "^3.23.6",
-    "autoprefixer": "^9.4.0",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-import": "^1.12.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "clean-webpack-plugin": "^1.0.0",
-    "copy-webpack-plugin": "^4.6.0",
-    "cross-env": "^5.2.0",
-    "css-loader": "^1.0.1",
-    "cssnano": "^4.1.7",
-    "cssnano-preset-advanced": "^4.0.5",
-    "file-loader": "^2.0.0",
-    "html-webpack-include-assets-plugin": "^1.0.6",
-    "html-webpack-plugin": "^3.2.0",
-    "lodash": "^4.17.11",
-    "moment": "^2.24.0",
-    "postcss-load-config": "^2.0.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-nested": "^4.1.0",
-    "postcss-partial-import": "^4.1.0",
-    "postcss-plugin": "^1.0.0",
-    "postcss-preset-env": "^6.4.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-redux": "^7.1.1",
-    "redux": "^4.0.4",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.41.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
-  },
+  "name": "cira-system",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
-    "react-router-dom": "^5.1.2"
+    "antd": "^3.23.6",
+    "lodash": "^4.17.15",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
+    "source-map-explorer": "^2.1.0"
   },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ]
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

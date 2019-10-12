@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import actions from "../actions/actions.jsx";
 
-function Home(props) {
+var Home = props => {
     return (
         <div>
             home
@@ -21,11 +21,12 @@ function Home(props) {
             </button>
             <br></br>
             ----------------<br></br>
-            {props.children}
+            <Suspense fallback={<div>loading comp...</div>}>
+                {props.children}
+            </Suspense>
         </div>
     );
-}
-
+};
 Home = connect(state => ({ name: state.name }))(Home);
 
 export default Home;

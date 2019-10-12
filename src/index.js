@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { HashRouter, Route } from "react-router-dom";
-import routerConfig from "./src/router/router.jsx";
+import routerConfig from "./router/router.jsx";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import 'antd/dist/antd.css';
 
-import initStore from "./src/store/store.jsx";
-import reducer from "./src/reducers/reducer.jsx";
+import initStore from "./store/store.jsx";
+import reducer from "./reducers/reducer.jsx";
 
 var store = createStore(reducer, initStore);
 
@@ -45,5 +46,5 @@ ReactDom.render(
             <RouteWalker routes={routerConfig}></RouteWalker>
         </HashRouter>
     </Provider>,
-    document.querySelector(".app")
+    document.querySelector("#root")
 );
