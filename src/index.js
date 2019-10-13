@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import routerConfig from "./router/router.jsx";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 
 import initStore from "./store/store.jsx";
 import reducer from "./reducers/reducer.jsx";
@@ -15,15 +15,16 @@ var store = createStore(reducer, initStore);
  * 遍历路由
  * @param {*} props
  */
-function RouteWalker(props) {
+var RouteWalker = props => {
     if (props.routes == null) return <></>;
     return (
-        <>
+        <Switch>
             {props.routes.map((route, index) => {
                 return (
                     <Route
                         key={index}
                         path={route.path}
+                        exact={route.exact ? true : false}
                         render={props => {
                             return (
                                 <route.component {...props}>
@@ -36,15 +37,15 @@ function RouteWalker(props) {
                     ></Route>
                 );
             })}
-        </>
+        </Switch>
     );
-}
+};
 
 ReactDom.render(
     <Provider store={store}>
-        <HashRouter>
+        <Router>
             <RouteWalker routes={routerConfig}></RouteWalker>
-        </HashRouter>
+        </Router>
     </Provider>,
     document.querySelector("#root")
 );

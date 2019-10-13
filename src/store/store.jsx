@@ -1,5 +1,9 @@
 const defaultStore = {
-    name: "test"
+    defaultMenu: null,
+    user: {
+        name: null,
+        token: 0
+    }
 };
 
 var store = window.localStorage.getItem("store");
